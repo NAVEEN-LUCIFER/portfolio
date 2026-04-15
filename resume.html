@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naveen Muralikrishnan — Resume</title>
+  <style>
+    :root {
+      --bg: #001011;
+      --accent: #6CCFF6;
+      --text: #FFFFFC;
+      --muted: #757780;
+      --success: #98CE00;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px;
+    }
+    .resume {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255,255,252,0.03);
+      border: 1px solid rgba(108,207,246,0.25);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 16px;
+      border-bottom: 1px solid rgba(117,119,128,0.35);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      margin: 0;
+      color: var(--accent);
+      letter-spacing: .4px;
+      font-size: 2rem;
+    }
+    .role { color: var(--muted); font-weight: 600; margin-top: 4px; }
+    .contact { color: var(--muted); font-size: .95rem; text-align: right; }
+    .actions a {
+      text-decoration: none;
+      color: var(--bg);
+      background: var(--success);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      margin-left: 8px;
+      display: inline-block;
+    }
+    h2 {
+      color: var(--accent);
+      font-size: 1rem;
+      margin: 18px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+    }
+    ul { margin: 8px 0 0 20px; }
+    li { margin-bottom: 6px; }
+    .muted { color: var(--muted); }
+    .company {
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 700px) {
+      .top { flex-direction: column; }
+      .contact { text-align: left; }
+      .actions a { margin: 8px 8px 0 0; }
+      .resume { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <section class="top">
+      <div>
+        <h1>Naveen Muralikrishnan</h1>
+        <div class="role">Backend / Product Engineer</div>
+      </div>
+      <div>
+        <div class="contact">Salem, India</div>
+        <div class="contact">+91-8946002701</div>
+        <div class="contact">naveenmuralikrishnan17@gmail.com</div>
+        <div class="contact">linkedin.com/in/naveen-muralikrishnan-2643a11a1</div>
+        <div class="actions">
+          <a href="Naveen_Resume_1.0.0.pdf" download>Download PDF</a>
+          <a href="index.html">Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Summary</h2>
+      <p>
+        Product-minded backend engineer with 3+ years at Zoho building enterprise messaging,
+        permissions, authentication, and reusable platform services across SalesIQ and shared chat infrastructure.
+        Owned backend work end-to-end, from design and API development to production rollout and incident response.
+      </p>
+    </section>
+
+    <section>
+      <h2>Work Experience</h2>
+      <div class="company">Zoho Corporation — Member Technical Staff <span class="muted">Jun 2023 — Present</span></div>
+      <ul>
+        <li>Owned backend development of SalesIQ Profiles with feature-level roles and permissions.</li>
+        <li>Built SalesIQ Outbound from 0→1 for WhatsApp and extended toward website channel support.</li>
+        <li>Implemented JWT-based authentication for embedded chat widgets.</li>
+        <li>Worked on Arattai messaging framework subscriber operations to reduce delay and server load.</li>
+        <li>Delivered backend features for shared messaging infrastructure used by SalesIQ and Cliq.</li>
+        <li>Worked with internal security teams on DoS, XSS, IDOR findings and ownership triage.</li>
+        <li>Resolved a production issue involving heavy Redis reads and delivered a hotfix in 2 hours.</li>
+        <li>Mentored 2 junior engineers on an internal issue-tracking tool.</li>
+        <li>Currently driving Visitor Tracking System extraction into a reusable framework service.</li>
+      </ul>
+      <div class="company" style="margin-top:10px;">Project Trainee / Summer Intern, Zoho <span class="muted">Apr 2022 — Jun 2023</span></div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <p><strong>Languages:</strong> Java, SQL</p>
+      <p><strong>Backend:</strong> REST APIs, Struts 2</p>
+      <p><strong>Data & Infra:</strong> MySQL, Redis, Kafka</p>
+      <p><strong>Tools:</strong> Git, Linux, Bash/Shell, Figma</p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>B.Tech, Information Technology</strong> — Karpagam College of Engineering, Coimbatore (2019 — 2023)</p>
+      <p class="muted">CGPA: 8.62 / 10</p>
+    </section>
+  </main>
+</body>
+</html>

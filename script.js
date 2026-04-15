@@ -27,6 +27,7 @@ const commands = [
     { name: "whoami", description: "display current user" },
     { name: "neofetch", description: "system information" },
     { name: "about", description: "introduction about me" },
+    { name: "resume", description: "open resume overview with download link" },
     { name: "skills", description: "list of technologies I have worked with" },
     { name: "experience", description: "my work experience at Zoho" },
     { name: "education", description: "my education details" },
@@ -44,6 +45,8 @@ const commands = [
 const links = {
     "linkedin": "https://www.linkedin.com/in/naveen-muralikrishnan-2643a11a1/",
     "email": "mailto:naveenmuralikrishnan17@gmail.com",
+    "resume-pdf": "Naveen_Resume_1.0.0.pdf",
+    "resume-web": "resume.html",
     "salesiq-profiles": "https://help.zoho.com/portal/en/kb/salesiq-2-0/for-administrators/controls/articles/profiles-on-salesiq-define-feature-level-access-and-permissions-for-operators",
     "salesiq-broadcast": "https://help.zoho.com/portal/en/kb/salesiq-2-0/for-administrators/channels/articles/broadcast-messaging-via-whatsapp-salesiq-outbound",
     "salesiq-proactive": "https://help.zoho.com/portal/en/kb/salesiq-2-0/for-administrators/channels/articles/proactive-messages-via-whatsapp-salesiq-outbound",
@@ -79,6 +82,7 @@ function autoCompleteCommand(command) {
 
 const virtualFiles = {
     'about.txt': 'about',
+    'resume.txt': 'resume',
     'skills.txt': 'skills',
     'experience.txt': 'experience',
     'education.txt': 'education',
@@ -170,6 +174,10 @@ const commandFunctions = {
     about: function () {
         const aboutText = FileSystem.readFile("commands/about.html");
         return aboutText;
+    },
+    resume: function () {
+        const resumeText = FileSystem.readFile("commands/resume.html");
+        return resumeText;
     },
     experience: function () {
         const exp = FileSystem.readFile("commands/experience.html");

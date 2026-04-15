@@ -151,6 +151,19 @@ html, body {
     color: #6CCFF6;
 }
 
+.resume-link {
+    color: #001011;
+    background: #98CE00;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.resume-link:hover {
+    background: #6CCFF6;
+}
+
 /* Command Line */
 #command-line {
     display: flex;
