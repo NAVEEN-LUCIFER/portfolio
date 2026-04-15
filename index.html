@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naveen Muralikrishnan - Backend/Product Engineer Portfolio">
+    <meta name="keywords" content="Naveen Muralikrishnan, Backend Engineer, Product Engineer, Zoho, SalesIQ, Java, Portfolio">
+    <meta name="author" content="Naveen Muralikrishnan">
+    <meta name="theme-color" content="#000000">
+    <title>Naveen Muralikrishnan | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="shell" id="shell">
+        <div id="loading">
+            <div class="boot-screen">
+                <div id="boot-lines"></div>
+                <div class="boot-progress-row">
+                    <span class="boot-label" id="boot-percent">0%</span>
+                    <div class="loading-bar-wrapper">
+                        <div id="loading-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="command-interface">
+            <div class="hero-header">
+                <div class="hero-name">Naveen</div>
+                <div class="hero-name">Muralikrishnan</div>
+                <div class="hero-title">Backend / Product Engineer</div>
+            </div>
+            <div id="output"></div>
+            <div id="command-line">
+                <span id="prompt"><span class="text-green">naveen@portfolio</span><span class="text-white">:</span><span class="text-blue">~</span><span class="text-white">$</span></span>
+                <input type="text" id="command-input" class="input" autofocus>
+                <span id="cursor">_</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="loading.js"></script>
+<script src="script.js" type="module"></script>

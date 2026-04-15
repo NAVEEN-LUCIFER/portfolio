@@ -1,0 +1,269 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', monospace;
+    overflow-y: hidden;
+    background-color: #001011;
+}
+
+.shell {
+    color: #FFFFFC;
+    font-family: 'Courier New', monospace;
+    overflow: auto;
+    padding: 10px 15px;
+    height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Loading / Boot Screen */
+#loading {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 40px 0 30px 0;
+    box-sizing: border-box;
+}
+
+.boot-screen {
+    width: 90%;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#boot-lines {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    min-height: 0;
+}
+
+#boot-lines::-webkit-scrollbar {
+    display: none;
+}
+
+.boot-line {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre;
+}
+
+.boot-progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    flex-shrink: 0;
+}
+
+.boot-label {
+    font-size: 12px;
+    color: #6CCFF6;
+    min-width: 35px;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+}
+
+.loading-bar-wrapper {
+    flex: 1;
+    height: 3px;
+    background: #1a2a2d;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#loading-progress {
+    height: 100%;
+    width: 0%;
+    background: #6CCFF6;
+    border-radius: 2px;
+    transition: width 0.25s ease;
+    box-shadow: 0 0 8px rgba(108, 207, 246, 0.5);
+}
+
+/* Command Interface */
+#command-interface {
+    vertical-align: top;
+}
+
+.input {
+    background-color: transparent;
+    border: none;
+    color: #FFFFFC;
+    font-family: 'Courier New', monospace;
+    font-size: inherit;
+    outline: none;
+    width: 1ch;
+    caret-color: transparent;
+}
+
+.output, .output-project {
+    background-color: transparent;
+    color: #FFFFFC;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+/* Colors */
+.text-green {
+    color: #98CE00;
+}
+
+.text-blue {
+    color: #6CCFF6;
+}
+
+.text-yellow {
+    color: #98CE00;
+}
+
+.text-pink {
+    color: #6CCFF6;
+}
+
+.text-purple {
+    color: #6CCFF6;
+}
+
+.text-red {
+    color: #E06C75;
+}
+
+.text-orange {
+    color: #98CE00;
+}
+
+.text-gray {
+    color: #757780;
+}
+
+.text-white {
+    color: #FFFFFC;
+}
+
+.text-cyan {
+    color: #6CCFF6;
+}
+
+/* Command Line */
+#command-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#prompt {
+    font-size: 14px;
+    white-space: nowrap;
+    margin-right: 8px;
+}
+
+#cursor {
+    font-size: 20px;
+    animation: blink 0.8s steps(1) infinite;
+    color: #98CE00;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Experience section */
+.experience-block {
+    margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 2px solid #757780;
+}
+
+.timeline-item {
+    margin-bottom: 8px;
+}
+
+/* Hero Header */
+.hero-header {
+    padding: 20px 0 15px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #2a2a2d;
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6CCFF6;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(108, 207, 246, 0.3);
+}
+
+.hero-title {
+    font-size: 1rem;
+    color: #757780;
+    margin-top: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+    .shell {
+        font-size: 12px;
+    }
+    .hero-name {
+        font-size: 2.5rem;
+    }
+    .hero-title {
+        font-size: 0.85rem;
+    }
+    .boot-line {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .shell {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+    .hero-name {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    .hero-title {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+    .boot-line {
+        font-size: 11px;
+    }
+    .boot-screen {
+        width: 95%;
+    }
+}
+
+/* Scrollbar */
+.shell::-webkit-scrollbar {
+    width: 6px;
+}
+
+.shell::-webkit-scrollbar-track {
+    background: #001011;
+}
+
+.shell::-webkit-scrollbar-thumb {
+    background: #2a2a2d;
+    border-radius: 3px;
+}
+
+.shell::-webkit-scrollbar-thumb:hover {
+    background: #757780;
+}
