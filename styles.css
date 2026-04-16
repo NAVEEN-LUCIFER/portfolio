@@ -164,6 +164,119 @@ html, body {
     background: #6CCFF6;
 }
 
+.skills-terminal {
+    margin-top: 6px;
+    border: 1px solid rgba(108, 207, 246, 0.22);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 252, 0.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.skills-terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(117, 119, 128, 0.22);
+    background: rgba(117, 119, 128, 0.08);
+}
+
+.skills-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.skills-dot-red {
+    background: #E06C75;
+}
+
+.skills-dot-yellow {
+    background: #FFFFFC;
+    border: 1px solid rgba(0, 16, 17, 0.15);
+}
+
+.skills-dot-green {
+    background: #98CE00;
+}
+
+.skills-path {
+    margin-left: 6px;
+    color: #757780;
+    font-size: 12px;
+}
+
+.skills-terminal-body {
+    padding: 14px;
+}
+
+.skills-command-line {
+    color: #FFFFFC;
+    margin-bottom: 14px;
+}
+
+.skills-groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.skill-group {
+    border: 1px solid rgba(117, 119, 128, 0.18);
+    border-radius: 10px;
+    padding: 12px;
+    background: rgba(0, 16, 17, 0.35);
+}
+
+.skill-group-title {
+    color: #98CE00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.skill-chip-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 252, 0.03);
+    border: 1px solid rgba(108, 207, 246, 0.12);
+}
+
+.skill-icon {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: rgba(108, 207, 246, 0.1);
+    color: #6CCFF6;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.skill-fallback {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.skill-name {
+    color: #FFFFFC;
+}
+
 /* Command Line */
 #command-line {
     display: flex;
@@ -239,6 +352,9 @@ html, body {
     }
     .boot-line {
         font-size: 12px;
+    }
+    .skills-groups {
+        grid-template-columns: 1fr;
     }
 }
 

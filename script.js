@@ -14,9 +14,31 @@ const input = document.getElementById("command-input");
 const prompt = document.getElementById("prompt");
 
 const technologies = [
-    ["Java", "MySQL", "Redis", "Kafka"],
-    ["REST APIs", "Struts 2", "Bash/Shell", "JWT"],
-    ["Git", "Linux", "Figma", "Zoho SalesIQ"],
+    {
+        category: "backend",
+        items: [
+            { name: "Java", iconClass: "devicon-java-plain" },
+            { name: "REST APIs", label: "API" },
+            { name: "Struts 2", label: "S2" },
+            { name: "JWT", label: "JWT" },
+        ],
+    },
+    {
+        category: "data",
+        items: [
+            { name: "MySQL", iconClass: "devicon-mysql-original" },
+            { name: "Redis", iconClass: "devicon-redis-plain" },
+            { name: "Kafka", iconClass: "devicon-apachekafka-original" },
+        ],
+    },
+    {
+        category: "tools",
+        items: [
+            { name: "Git", iconClass: "devicon-git-plain" },
+            { name: "Linux", iconClass: "devicon-linux-plain" },
+            { name: "Bash/Shell", iconClass: "devicon-bash-plain" },
+        ],
+    },
 ];
 
 const commands = [
@@ -192,10 +214,39 @@ const commandFunctions = {
         return contact;
     },
     skills: function () {
-        const { table, maxCellLength } = createTable(technologies);
-        const containerWidth = maxCellLength * technologies[0].length * 10 + 40;
-        const tableContainer = `<div style="width:${containerWidth}px" class="text-green"><pre>${table}</pre></div>`;
-        return tableContainer;
+        const groupHtml = technologies.map((group) => {
+            const itemsHtml = group.items.map((item) => {
+                const iconHtml = item.iconClass
+                    ? `<span class="skill-icon"><i class="${item.iconClass}"></i></span>`
+                    : `<span class="skill-icon skill-fallback">${item.label}</span>`;
+
+                return `
+                    <div class="skill-chip">
+                        ${iconHtml}
+                        <span class="skill-name">${item.name}</span>
+                    </div>`;
+            }).join("");
+
+            return `
+                <div class="skill-group">
+                    <div class="skill-group-title">${group.category}</div>
+                    <div class="skill-chip-list">${itemsHtml}</div>
+                </div>`;
+        }).join("");
+
+        return `
+            <div class="skills-terminal">
+                <div class="skills-terminal-bar">
+                    <span class="skills-dot skills-dot-red"></span>
+                    <span class="skills-dot skills-dot-yellow"></span>
+                    <span class="skills-dot skills-dot-green"></span>
+                    <span class="skills-path">stack://inspect</span>
+                </div>
+                <div class="skills-terminal-body">
+                    <div class="skills-command-line"><span class="text-green">$</span> stack --list --with-icons</div>
+                    <div class="skills-groups">${groupHtml}</div>
+                </div>
+            </div>`;
     },
     hobbies: function () {
         return `<br>
